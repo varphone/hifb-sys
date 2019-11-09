@@ -28,8 +28,8 @@ Requirements
 
 > The toolchain and the mpp-lib you can get from the BSP sdk.
 
-Env Defaults
-------------
+Envionment Defaults
+-------------------
 
 ### Hi3516EV200
 
