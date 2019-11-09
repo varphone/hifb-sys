@@ -149,16 +149,11 @@ fn main() -> Result<(), MyError> {
         .whitelist_var("^FBIO.*|^HIFB.*")
         .whitelist_var("^HI_.*")
         .use_core()
-        .clang_arg(format!(
-            "-I{}/include",
-            env::var("MPP_DIR").unwrap_or_else(|_| { panic!("sdasdasd") })
-        ))
+        .clang_arg(format!("-I{}/include", env::var("MPP_DIR").unwrap()))
         .clang_arg(format!("-I{}", env::var("SYS_INCLUDE").unwrap()))
         .parse_callbacks(Box::new(MyParseCallbacks::default()))
         .generate()
         .expect("Unable to generate bindings");
-
-    eprintln!("111111FUclsdlasdasd");
 
     // Write the bindings to the $OUT_DIR/bindings.rs file.
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
