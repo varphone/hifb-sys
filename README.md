@@ -91,8 +91,9 @@ Examples
 --------
 
 ```rs
-use libc::{ioctl, open, O_RDWR};
 use hifb_sys::{HI_BOOL, FBIOPUT_SHOW_HIFB};
+use libc::{close, ioctl, open, O_RDWR};
+use std::ffi::CString;
 
 fn main() {
     unsafe {
@@ -102,6 +103,7 @@ fn main() {
         let val = HI_BOOL::HI_TRUE;
         let err = ioctl(fd, FBIOPUT_SHOW_HIFB, &val);
         assert_eq!(0, err);
+        close(fd);
     }
 }
 ```
