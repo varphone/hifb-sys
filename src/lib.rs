@@ -25,6 +25,24 @@ pub const FBIOPUT_DYNAMIC_RANGE_HIFB: u32 = 1074022027;
 pub const FBIOGET_DYNAMIC_RANGE_HIFB: u32 = 2147763852;
 pub const FBIO_RELEASE_HIFB: u32 = 18070;
 
+/// Make HI_BOOL can convert to bool.
+impl std::convert::Into<bool> for HI_BOOL {
+    fn into(self) -> bool {
+        self == HI_BOOL::HI_TRUE
+    }
+}
+
+/// Make bool can convert to HI_BOOL.
+impl std::convert::Into<HI_BOOL> for bool {
+    fn into(self) -> HI_BOOL {
+        if self {
+            HI_BOOL::HI_TRUE
+        } else {
+            HI_BOOL::HI_FALSE
+        }
+    }
+}
+
 impl fb_bitfield {
     /// Create a new fb_bitfield.
     pub fn new(offset: u32, length: u32, msb_right: u32) -> Self {
