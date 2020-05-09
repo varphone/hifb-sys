@@ -195,6 +195,7 @@ fn main() -> Result<(), DynError> {
         .impl_partialeq(true)
         .whitelist_function("^HI_.*")
         .whitelist_type("fb_bitfield|fb_fix_screeninfo|fb_var_screeninfo")
+        .whitelist_type("HIFB_LAYER_INFO_MASKBIT")
         .whitelist_type("^HI_.*$")
         .whitelist_type("HIFB.*_[ES]$")
         .whitelist_var("^FBIO.*|^HIFB.*")
