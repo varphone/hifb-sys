@@ -1,6 +1,8 @@
 hifb-sys
 ========
 
+[![Build Status](https://192.168.0.2:7443/api/badges/rdst/hifb-sys/status.svg?ref=refs/heads/{{BRANCH_NAME}})](https://192.168.0.2:7443/rdst/hifb-sys)
+
 Hi35XX FB API for Rust unsafe bindings.
 
 Requirements
