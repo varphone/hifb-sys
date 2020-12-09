@@ -9,7 +9,7 @@ description = """
 Hi35XX FB API for Rust unsafe bindings.
 """
 documentation = "https://docs.rs/hifb-sys"
-homepage = "https://github.com/varphone/hifb-sys"
+homepage = "https://github.com/vaxpl/hifb-sys"
 readme = "README.md"
 categories = ["embedded", "external-ffi-bindings"]
 license = "MIT"
